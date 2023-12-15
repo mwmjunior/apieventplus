@@ -37,10 +37,19 @@
         }
       }
     },
-    "/api/ComentariosEvento/ListarSomenteExibe": {
+    "/api/ComentariosEvento/ListarSomenteExibe{id}": {
       "get": {
         "tags": [
           "ComentariosEvento"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
         ],
         "responses": {
           "200": {
@@ -173,6 +182,18 @@
       }
     },
     "/api/Evento/ListarProximos": {
+      "get": {
+        "tags": [
+          "Evento"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Evento/ListarAnteriores": {
       "get": {
         "tags": [
           "Evento"
